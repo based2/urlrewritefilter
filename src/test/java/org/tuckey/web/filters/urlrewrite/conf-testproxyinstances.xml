@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite SYSTEM "urlrewrite3.3.dtd">
+<urlrewrite>
+    <rule>
+        <from>/A/(.*)/AAA/(.*)$</from>
+        <set name="urlrewrite.service">$1</set>
+        <set name="urlrewrite.cache">$2</set>
+        <to type="proxy" last="true">
+            <instance>http://myserver1/A/$1/AAA/$2</instance>
+            <instance>http://myserver2/A/$1/AAA/$2</instance>
+            <instance>http://myserver3/A/$1/AAA/$2</instance>
+            <instance>http://myserver4/A/$1/AAA/$2</instance>
+            <instance>http://myserver5/A/$1/AAA/$2</instance>
+        </to>
+    </rule>
+</urlrewrite>

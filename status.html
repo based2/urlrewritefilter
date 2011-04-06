@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>UrlRewriteFilter configuration overview for conf-test1.xml</title>
+<style type="text/css">
+
+body {
+    background: #ffffff;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif; color:#000000;
+    font-size: medium;
+}
+
+h2 {
+    border: 1px solid #c0c0c0;
+    background-color: #ccccff;
+    padding: 5px;
+}
+
+h3 {
+    border-top: 1px solid #c0c0c0;
+    margin-top: 1em;
+    padding-top: 0.25em;
+}
+
+code {
+    background-color: #eeeeee;
+}
+
+hr {
+    border: 0;
+    background-color: #c0c0c0;
+}
+
+.err {
+    color: #ff0000;
+}
+
+a:link, a:visited {
+    color: blue;
+}
+
+a:active, a:hover, {
+    color: #f30 !important;
+}
+
+a:link, a:visited {
+    color: #555 !important;
+}
+</style>
+<body>
+<h1><a href="http://tuckey.org/urlrewrite/">UrlRewriteFilter</a> 3.2.0 build 1 configuration overview (generated 16/03/11 16:49)</h1>
+<hr />
+<h2>Running Status</h2>
+<p>Conf
+file <code>conf-test1.xml</code>
+loaded <em>Wed Mar 16 16:49:12 CET 2011</em>.</p>
+Conf file reload check <em>disabled</em>
+<p>Status path <code>/rewrite-status</code>.</p>
+<h2>Summary
+ of conf-test1.xml
+</h2>
+<p>In total there are 9 rules, 2 outbound rules and 3 condtions in the configuration file.</p>
+<h3>Rule 0</h3>
+<p>URL's matching <code>basicfrom1</code> will be <code>forwarded</code> to <code>basicto1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Given that the following condtion is met.</p><ol>
+<li>
+The <code>user-agent</code> HTTP header matches the value <code>basicvalue1</code>
+</li>
+</ol>
+<p>This rule will set:</p><ol>
+<li>
+An attribute on the <code>request</code> object called <code>valuenull</code> to the value <code>null</code>
+</li>
+</ol>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Mega Rule (rule 1) **DISABLED**</h3>
+<dl><dd><p>This rule is designed to take sdfsdfsdf sdcmdklcmjlkcj lsdc<br />            sdcsdckljsklcj lksjck jkls</p></dd></dl>
+<p>URL's matching <code>basicfrom2</code> will be <code>redirected</code> to <code>basicto2</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Given that the following condtion is met.</p><ol>
+<li>
+<code>port</code> is <code>greater than</code> the value <code>9004</code>
+</li>
+</ol>
+
+
+<h3>Rule 2</h3>
+<p>URL's matching <code>/some/olddir/(.*)</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>This rule will set:</p><ol>
+<li>
+An attribute on the <code>request</code> object called <code>blah</code> to the value <code>$1</code>
+</li>
+<li>
+An attribute on the <code>session</code> object called <code>nam</code> to the value <code>val</code>
+</li>
+<li>
+A cookie called <code>mycook</code>  to the value <code>val:tuckey.org:96:/asdsad</code>
+</li>
+<li>
+status to <code>201</code>
+</li>
+<li>
+locale to <code>en-NZ-bro</code>
+</li>
+<li>
+charset to <code>UTF-8</code>
+</li>
+<li>
+content-type to <code>application/spagcodebrowserplugin</code>
+</li>
+</ol>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 3</h3>
+<p>URL's matching <code>(.*)</code> will be <code>redirected</code> to <code>https:///very/newdir/$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Given that the following condtion is met.</p><ol>
+<li>
+<code>port</code> is <code>equal to</code> the value <code>80</code>
+</li>
+</ol>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Class Rule org.tuckey.web.filters.urlrewrite.TestRuleObj</h3>
+
+
+<h3>Class Rule org.tuckey.web.filters.urlrewrite.TestRuleObj</h3>
+
+
+<h3>Rule 6</h3>
+<p>URL's matching <code>/run-me</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>This rule will run:</p><ol>
+<li>
+ <code>run(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)</code> on an instance of <code>org.tuckey.web.filters.urlrewrite.test.TestRunObj</code>
+</li>
+<li>
+ <code>nonDefaultRun(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)</code> on an instance of <code>org.tuckey.web.filters.urlrewrite.test.TestRunObj</code>
+</li>
+</ol>
+<small>Note, if <code>init(ServletConfig)</code> or <code>destroy()</code> is found on the above objects they will be run at when creating or destroying an instance.</small>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 7</h3>
+<p>URL's matching <code>^/runWithParam/([0-9])+/$</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>This rule will run:</p><ol>
+<li>
+ <code>runWithParam(int)</code> on an instance of <code>org.tuckey.web.filters.urlrewrite.test.TestRunObj</code>
+</li>
+</ol>
+<small>Note, if <code>init(ServletConfig)</code> or <code>destroy()</code> is found on the above object they will be run at when creating or destroying an instance.</small>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 8</h3>
+<p>URL's matching <code>^/lowerMe/([A-Z])+/$</code> will be <code>forwarded</code> to <code>/lowerMe/${lower:$1}</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>default encode on to test (outbound rule 0)</h3>
+<p>Outbound URL's matching <code>a</code> will be rewritten to <code>b</code>, after <code>response.encodeURL()</code> has been called.</p>
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<h3>Outbound Rule 1</h3>
+<p>Outbound URL's matching <code>a</code> will be rewritten to <code>b</code>, <code>response.encodeURL()</code> will not be called.</p>
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<hr />
+<h2>Request Debug Info</h2>
+<h4>General</h4>
+<pre>
+method: GET
+context-path: 
+port: 80
+protocol: null
+remote-addr: null
+remote-host: null
+request-uri: null
+request-url: null
+server-name: null
+scheme: null
+</pre>
+<h4>Request Headers</h4>
+<pre>
+</pre>
+<h4>Time info</h4>
+<pre>
+time: 1300290552347
+year: 2011
+month: 2
+dayofmonth: 16
+dayofweek: 4
+ampm: 1
+hourofday: 16
+minute: 49
+second: 12
+millisecond: 347
+</pre>
+<br /><br /><br />
+</body>
+</html>

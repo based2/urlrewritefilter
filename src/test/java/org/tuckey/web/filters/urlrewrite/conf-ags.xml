@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite SYSTEM "urlrewrite3.4.dtd">
+<urlrewrite>
+    <rule>
+		<from>^/cache/(.*)$</from>
+   		<set name="urlrewrite.cache">$1</set>
+		<to type="proxy" last="true">
+			<instance>http://s-insp-som2-st.net1.cec.eu.int/cache/$1</instance>
+		</to>
+	</rule>
+</urlrewrite>

@@ -1,0 +1,349 @@
+<html>
+<!--
+Hi Paul,
+
+This is simple but straight-forward: you can see all the rules I am
+using by visiting this:
+http://zooom.net/rewrite-status
+
+And then you can visit zOoOm to find out the result of the
+redirecting.
+http://zooom.net
+
+Hope this helps.
+
+Zixin
+-->
+<head>
+<title>UrlRewriteFilter configuration overview for /WEB-INF/urlrewrite.xml</title>
+<style type="text/css">
+
+body {
+    background: #ffffff;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif; color:#000000;
+    font-size: medium;
+}
+
+h2 {
+    border: 1px solid #c0c0c0;
+    background-color: #ccccff;
+    padding: 5px;
+}
+
+h3 {
+    border-top: 1px solid #c0c0c0;
+    margin-top: 1em;
+    padding-top: 0.25em;
+}
+
+code {
+    background-color: #eeeeee;
+}
+
+hr {
+    border: 0;
+    background-color: #c0c0c0;
+}
+
+.err {
+    color: #ff0000;
+}
+
+a:link, a:visited {
+    color: blue;
+}
+
+a:active, a:hover, {
+    color: #f30 !important;
+}
+
+a:link, a:visited {
+    color: #555 !important;
+}
+</style>
+<body>
+<h1><a href="http://tuckey.org/urlrewrite/">UrlRewriteFilter</a> 3.1.0 build 1 configuration overview (generated 08-8-19 ??7:17)</h1>
+<hr />
+<h2>Running Status</h2>
+<p>Conf file <code>/WEB-INF/urlrewrite.xml</code> loaded <em>Tue Aug 19 05:06:01 CST 2008</em>.</p>
+
+Conf file reload check <em>disabled</em>
+<p>Status path <code>/rewrite-status</code>.</p>
+<h2>Summary of /WEB-INF/urlrewrite.xml</h2>
+<p>In total there are 21 rules, 7 outbound rules and 3 condtions in the configuration file.</p>
+<h3>Rule 0</h3>
+<dl><dd><p>Change any request to zooom.net</p></dd></dl>
+<p>URL's matching <code>^/([^$]*)$</code> will <code>permanent-redirect</code> to <code>http://zooom\.net/$1</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Given that the following condtion is met.</p><ol>
+<li>
+The <code>host</code> HTTP header does NOT match the value <code>zooom\.net</code>
+</li>
+</ol>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 1 **DISABLED**</h3>
+<dl><dd><p>Remove the /wml prefix of any URL starting with /wml, and set the corresponding UA attribute</p></dd></dl>
+<p>URL's matching <code>^/wml(/(.*))*$</code> will be <code>forwarded</code> to <code>/$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>This rule will set:</p><ol>
+
+<li>
+An attribute on the <code>request</code> object called <code>UA</code> to the value <code>Nokia7110</code>
+</li>
+</ol>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 2 **DISABLED**</h3>
+
+<dl><dd><p>Remove the /xhtml prefix of any URL starting with /xhtml, and set the corresponding UA attribute</p></dd></dl>
+<p>URL's matching <code>^/xhtml(/(.*))*$</code> will be <code>forwarded</code> to <code>/$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>This rule will set:</p><ol>
+
+<li>
+An attribute on the <code>request</code> object called <code>UA</code> to the value <code>Nokia 60</code>
+</li>
+</ol>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 3 **DISABLED**</h3>
+
+<dl><dd><p>Remove the /chtml prefix of any URL starting with /chtml, and set the corresponding UA attribute</p></dd></dl>
+<p>URL's matching <code>^/chtml(/(.*))*$</code> will be <code>forwarded</code> to <code>/$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>This rule will set:</p><ol>
+
+<li>
+An attribute on the <code>request</code> object called <code>UA</code> to the value <code>CHTML Generic</code>
+</li>
+</ol>
+<p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 4</h3>
+
+<dl><dd><p>Text sitemap</p></dd></dl>
+<p>URL's matching <code>^/sitemap.xml([^$]*)$</code> will be <code>forwarded</code> to <code>/sitemap_txt.jsp$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 5</h3>
+<dl><dd><p>HTML sitemap</p></dd></dl>
+<p>URL's matching <code>^/sitemap.html([^$]*)$</code> will be <code>forwarded</code> to <code>/sitemap_html.jsp$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 6</h3>
+<dl><dd><p>Mobile XML sitemap</p></dd></dl>
+<p>URL's matching <code>^/mobile_sitemap.xml([^$]*)$</code> will be <code>forwarded</code> to <code>/sitemap_mobile.jsp$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 7</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/cc.jsp([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp$1</code>.</p>
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 8</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)--([^-]*)-([^-]*)-([^\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$4&q1=$6&$8</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 9</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)--([^-]*)-([^-\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$4&q1=&q2=&$7</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 10</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)-(\d{1})-([^-]*)-([^-]*)-([^\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$5&s1=$4&q1=$7&$9</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 11</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)-(\d{1})-([^-]*)-([^-\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$5&s1=$4&q1=&q2=&$8</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 12</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)-(\d{1})(\d{1})-([^-]*)-([^-]*)-([^\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$6&s1=$4&s2=$5&q1=$8&$10</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 13</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)-(\d{1})(\d{1})-([^-]*)-([^-\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$6&s1=$4&s2=$5&q1=&q2=&$9</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 14</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)-(\d{1})(\d{1})(\d{1})-([^-]*)-([^-]*)-([^\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$7&s1=$4&s2=$5&s3=$6&q1=$9&$11</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 15</h3>
+<dl><dd><p>Convert entity search static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d{8})(\d+)([^-]*)-(\d{1})(\d{1})(\d{1})-([^-]*)-([^-\.]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/entity.jsp?r=$1&o=$2&c=$3&k=$7&s1=$4&s2=$5&s3=$6&q1=&q2=&$10</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 16</h3>
+<dl><dd><p>Convert entity detail static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/(\d+)-([^-]+)-([^-]+)-([^\.]+)\.htm(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/detail.jsp?e=$1&r=$2&rn=$3&en=$4&$6</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 17</h3>
+<dl><dd><p>Convert Olympic static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/olympic/([^-]*)-([^-]*)-([^-]*)-([^-]*)-([^-]*)\.html(\??)([^$]*)$</code> will be <code>forwarded</code> to <code>/olympic/search.jsp?r=$1&c=$2&b=$3&rn=$4&cn=$5&$7</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 18</h3>
+<dl><dd><p>Convert Olympic static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/olympic/(\D)([^-]*)([^\.]*)\.html([^$]*)$</code> will be <code>forwarded</code> to <code>/olympic/$1$2.jsp$4</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 19</h3>
+<dl><dd><p>Convert other static URL to JSP query</p></dd></dl>
+<p>URL's matching <code>^/misc/([^$]*)\.html([^$]*)$</code> will be <code>forwarded</code> to <code>/misc/$1.jsp$2</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Rule 20</h3>
+<dl><dd><p>The rule means that requests to /test/status/ will be redirected to /rewrite-status the url will be rewritten.</p></dd></dl>
+<p>URL's matching <code>/test/status/</code> will be <code>redirected</code> to <code>%{context-path}/rewrite-status</code>.</p>
+
+<p>This rule and it's conditions will use the <code>regex</code> matching engine.</p><p>Note, other rules will be processed after this rule.</p>
+
+
+<h3>Outbound Rule 0</h3>
+<dl><dd><p>Convert entity search JSP query to static URL (w/ user preference, w/ center name)</p></dd></dl>
+<p>Outbound URL's matching <code>^/entity.jsp\?o=([^&]+)&r=([^&]+)&c=([^&]*)&k=([^&]+)&s1=([^&]*)&s2=([^&]*)&s3=([^&]*)&rn=([^&]+)&cn=([^&]+)([^$]*)$</code> will be rewritten to <code>/$2$1$3-$5$6$7-$4-$8-$9.html</code>, after <code>response.encodeURL()</code> has been called.</p>
+
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<h3>Outbound Rule 1</h3>
+<dl><dd><p>Convert entity search JSP query to static URL (w/ user preference, w/o center name)</p></dd></dl>
+<p>Outbound URL's matching <code>^/entity.jsp\?o=([^&]+)&r=([^&]+)&c=([^&]*)&k=([^&]+)&s1=([^&]*)&s2=([^&]*)&s3=([^&]*)&rn=([^&]+)([^$]*)$</code> will be rewritten to <code>/$2$1$3-$5$6$7-$4-$8.html</code>, after <code>response.encodeURL()</code> has been called.</p>
+
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<h3>Outbound Rule 2</h3>
+<dl><dd><p>Convert entity search JSP query to static URL (w/o user preference, w/ center name)</p></dd></dl>
+<p>Outbound URL's matching <code>^/entity.jsp\?o=([^&]+)&r=([^&]+)&c=([^&]*)&k=([^&]+)&rn=([^&]+)&cn=([^&$]+)([^$]*)$</code> will be rewritten to <code>/$2$1$3--$4-$5-$6.html</code>, after <code>response.encodeURL()</code> has been called.</p>
+
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<h3>Outbound Rule 3</h3>
+<dl><dd><p>Convert entity search JSP query to static URL (w/o user preference, w/o center name)</p></dd></dl>
+<p>Outbound URL's matching <code>^/entity.jsp\?o=([^&]+)&r=([^&]+)&c=([^&]*)&k=([^&]+)&rn=([^&]+)([^$]*)$</code> will be rewritten to <code>/$2$1$3--$4-$5.html</code>, after <code>response.encodeURL()</code> has been called.</p>
+
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<h3>Outbound Rule 4</h3>
+<dl><dd><p>Convert entity detail JSP query to static URL</p></dd></dl>
+<p>Outbound URL's matching <code>^/detail.jsp\?e=([^&]+)&r=([^&]+)([^$]*)&rn=([^&]+)&en=([^$]+)([^$]*)$</code> will be rewritten to <code>/$1-$2-$4-$5.htm</code>, after <code>response.encodeURL()</code> has been called.</p>
+
+<p>Given that the following condtion is met.</p><ol>
+<li>
+The <code>user-agent</code> HTTP header matches the value <code>(.)*(Google|Baidu|Yahoo|MSN|sogou|Sogou|Sosospider)(.)*</code>
+</li>
+</ol>
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<h3>Outbound Rule 5</h3>
+
+<dl><dd><p>The outbound-rule specifies that when response.encodeURL is called (if you are using JSTL c:url)<br />            the url /rewrite-status will be rewritten to /test/status/.<br /><br />            The above rule and this outbound-rule means that end users should never see the<br />            url /rewrite-status only /test/status/ both in thier location bar and in hyperlinks<br />            in your pages.</p></dd></dl>
+<p>Outbound URL's matching <code>/rewrite-status</code> will be rewritten to <code>/test/status/</code>, after <code>response.encodeURL()</code> has been called.</p>
+
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<h3>Strip URL Session ID's (outbound rule 6)</h3>
+<p>Outbound URL's matching <code>^(.*?)(?:\;jsessionid=[^\?#]*)?(\?[^#]*)?(#.*)?$</code> will be rewritten to <code>$1$2$3</code>.</p>
+<p>Given that the following condtion is met.</p><ol>
+<li>
+The <code>user-agent</code> HTTP header matches the value <code>(.)*(Googlebot|Baiduspider)(.)*</code>
+
+</li>
+</ol>
+<p>Note, other outbound rules will be processed after this rule.</p>
+
+
+<hr />
+<h2>Request Debug Info</h2>
+<h4>General</h4>
+<pre>
+method: GET
+context-path:
+port: 80
+protocol: HTTP/1.0
+remote-addr: 202.86.97.52
+remote-host: 202.86.97.52
+request-uri: /rewrite-status
+request-url: http://zooom.net/rewrite-status
+server-name: zooom.net
+scheme: http
+</pre>
+<h4>Request Headers</h4>
+<pre>
+
+cache-control: max-age=259200
+connection: keep-alive
+keep-alive: 300
+via: 1.1 europa.nzqa.govt.nz:3128 (squid/2.5.STABLE5)
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+accept-encoding: identity,gzip,deflate
+accept-language: en-us,en;q=0.5
+host: zooom.net
+user-agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1
+x-forwarded-for: 172.16.1.20
+content-length: 0
+</pre>
+
+<h4>Time info</h4>
+<pre>
+time: 1219101424000
+year: 2008
+month: 7
+dayofmonth: 19
+dayofweek: 3
+ampm: 0
+hourofday: 7
+minute: 17
+second: 4
+millisecond: 0
+</pre>
+<br /><br /><br />
+</body>
+</html>
