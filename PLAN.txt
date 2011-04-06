@@ -1,0 +1,53 @@
+PLAN 20110324
+===============================
+
+Remove log.error in special object
+Adaptative loadbalancing - urlrewrite3.4.dtd
+--> Fork with only proxying
+Migrate to new Apache common http client for Proxy only - urlrewriteproxy3.4.dtd
+--> log4j > full slf4j (All exception logged)
+
+Migrate to new Apache common http client the whole
+Better test units 3 -> 4
+fix clirr control over java binary compatibility detection
+
+
+CHANGELOG========================================================================
+
+20110317
++ new pom tested with Maven 3.0.3
+ Add Load balancing instances
+ * for the "to" element
+ * 
+ * USAGE
+ *  <to type="proxy" last="true">
+ *  	<instance>http://myserver1/A/$1/AAA/$2</instance>
+ *  	<instance>http://myserver2/A/$1/AAA/$2</instance>
+ *  	<instance>http://myserver3/A/$1/AAA/$2</instance>
+ *  	<instance>http://myserver4/A/$1/AAA/$2</instance>
+ *  	<instance>http://myserver5/A/$1/AAA/$2</instance>
+ *  </to>
+ 
+20110318
+    + JAVA 1.5
+    * fix DTD problem, by loading DTD as a local file - ConfHandler.java
+    + Test case: ConfTest.testConfProxyInstance() OK
+    
+20110322
+ 	+ Instance enabled > release 3.2.1-bac (Proxy + loadbalancing - urlrewrite3.3.dtd)
+    + Test case: RequestProxyAGSTest, UrlRewriteFilterProxyTest OK
+    * Fix -- No match on "from" (to is empty) -- ONGOING
+    
+20110323/20110324  
+	* build fix for Weblogic 10
+	* final loadbalacing fixes
+	
+20110331
+	* applied two proxy patch on the issue 36 - Improvement: When proxying requests - stream the data to reduce memory consumption
+	* fix pom with remarks on issue 89 - POM is unusable, dependencies are incorrent 
+	
+20110406
+    * published on github
+    
+    
+ 
