@@ -1,5 +1,7 @@
 # [UrlRewriteFilter](http://www.tuckey.org/urlrewrite/)
 
+Official repo: https://github.com/paultuckey/urlrewritefilter
+
 ## Changelog
 
 - 3.2.1-bac2 - DTD for Proxy load balanced
