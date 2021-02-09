@@ -61,16 +61,16 @@
         <!--  WEBLOGIC 10 solution: -->
         <!--
         <dependency>
-            <groupId>com.googlecode.sli4j</groupId>
-            <artifactId>sli4j-slf4j-nop</artifactId>
-            <version>2.0</version>
+           <groupId>org.slf4j</groupId>
+           <artifactId>slf4j-nop</artifactId>
+            <version>1.7.30</version>
         </dependency>
        -->
 
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant</artifactId>
-            <version>1.9.15</version>
+            <version>1.10.9</version>
             <scope>provided</scope>
         </dependency>
 
@@ -151,9 +151,6 @@
                                     <artifact>commons-codec:commons-codec</artifact>
                                     <artifact>commons-httpclient:commons-httpclient</artifact>
                                     <artifact>org.json:json</artifact>
-                                    <!--  <artifact>com.googlecode.sli4j:sli4j-slf4j-nop</artifact> -->
-                                    <!--  <artifact>log4j:log4j</artifact> -->
-                                    <!--  <artifact>org.slf4j:slf4j-api</artifact> -->
                                 </filter>
                             </filters>
                         </configuration>
@@ -267,7 +264,7 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>4.1.4</version>
+                <version>4.2.0</version>
                 <configuration>
                     <xmlOutput>true</xmlOutput>
                     <!-- Optional directory to put spotbugs xdoc xml report -->
